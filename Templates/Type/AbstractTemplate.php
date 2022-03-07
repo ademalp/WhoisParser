@@ -161,6 +161,9 @@ abstract class AbstractTemplate
                 case 'iso-8859-1':
                     $rawdata = utf8_encode($rawdata);
                     break;
+                case 'iso-8859-9':
+                    $rawdata = iconv("ISO-8859-9", "UTF-8", $rawdata);
+                    break;
             }
         }
 

@@ -99,8 +99,7 @@ class Tr extends Regex
         
         foreach ($ResultSet->contacts as $contactType => $contactArray) {
             foreach ($contactArray as $contactObject) {
-                $contactObject->address = array_map('utf8_encode', explode("\n", trim($contactObject->address)));
-                $contactObject->address = array_map('trim', $contactObject->address);
+                $contactObject->address = array_map('trim', explode("\n", trim($contactObject->address)));
                 
                 if ($contactType === 'owner') {
                     $contactObject->organization = $contactObject->address[0];
